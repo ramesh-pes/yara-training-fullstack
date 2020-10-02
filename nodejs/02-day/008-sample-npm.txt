@@ -1,0 +1,37 @@
+
+Step 1
+-----
+cd workspace
+mkdir sample-app
+cd sample-app 
+npm init
+--
+this will create pacakge.json
+
+Step 2
+-----
+npm i async
+
+this will install / download async lib to node_modules folder
+
+Step 3: create file sample-app/main.js
+---
+var http = require('http');
+// Tomcat / IBM WebSphere
+// Apache Service | IIS | .Net Server
+var count = 0;
+var server = http.createServer(
+	// request  //response
+	function (req, res) {
+	console.log("request no "+ ++count );
+	res.statusCode = 200; 
+	res.write('Hello World..22 3333');
+
+	setTimeout(function(){	
+		res.end(); //http send find 
+	},100);
+});
+
+server.listen(3000);
+---------------
+

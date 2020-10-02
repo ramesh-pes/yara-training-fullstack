@@ -1,0 +1,42 @@
+Node.exe =>
+-------
+program to run javaScript (backend - not GUI) 
+It has (process  + JS engine)
+-------
+
+Node (process + JS-Engine)
+Browser (DOM + JS-Engine)
+App ( code in ObjectiveC /  Java this includes JS engine) + javascript created by developor
+
+=====
+
+Command 1: 
+npx react-native init CustomerAppNative 
+----
+It creates project CustomerAppNative which has Objective C libs /code
+---
+Plus reactJS code of App.js
+
+
+--
+react-native run-ios
+It build your ObjectiveC / Java code  
++ it invokes a server Metro Bundler (keeps checking and building JS code)
+--
+
+npm start (it then only start Metro Bundler )
+
+Browser (optimised) + React (code in JS)
+
+react-native has implementation on basic components
+In browser we have <div> div implemented by Browser 
+<View> implementation is provided by ReactNative
+
+
+We don't have DOM here (similar to DOM which in by REACT Native)
+View => div  we don't have Virtaul DOM as well
+
+
+
+
+

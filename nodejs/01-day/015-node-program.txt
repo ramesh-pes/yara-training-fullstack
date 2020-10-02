@@ -1,0 +1,18 @@
+modify command program
+---
+sum 2 4 5 6 t y 6 
+should return 23
+
+sum 3 5 6 r 3
+should return 17
+
+sum
+should return 0
+
+sum e
+should return 0
+
+sum e 3
+should return 3
+
+

@@ -1,0 +1,68 @@
+http://training.pyther.com/yara/01-day/
+
+https://download.sublimetext.com/Sublime%20Text%20Build%203211%20x64.zip
+P1: http://training.pyther.com/yara/setup.txt
+P2: http://training.pyther.com/yara/01-day/001-workspace.txt
+P3: http://training.pyther.com/yara/01-day/002-node-not-found.txt
+
+------
+1960 ==> Assenbly language  procedures
+1970 ==> C (high level) function ()
+1980 ==> C++ (high level) OOPS (why OOPS)
+problem is for real world 
+
+1995 ==> Java (high level) Platform independent
+
+2015 ==> JavaScript  (script)
+Script | OOP | faster | EventOriented (callback)
+
+What is script?
+
+---
+120 years .. 
+IITR (1957)
+New Paper 
+----
+
+Printing Industry
+======
+
+Reporter >
+Engineer into mutiple suff ==> (printing machine)
+script 
+Script is a command or set of commands that cannot run by itself and to be consumed by existing program to make change the output
+
+=============
+lunch break
+=============
+1. prepare you food yourself 
+
+2, Use command /app to order food 
+
+Browser : DOM + javaScript Engine 
+Node : process (system) + javaScript Engine 
+REact Native : Native elements +  javaScript Engine 
+Electron JS : Croos platform desktop app
+
+---------------
+Script is upper hand of language (time and efficieny)
+
+Google => Android => Java () => Kotlin
+Apple => iOS => Objective => Swift (javascript)
+Facebook =>  JavaScript (iOS + Android ) > React (React Native)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

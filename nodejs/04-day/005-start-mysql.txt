@@ -1,0 +1,23 @@
+On Macbook
+=============
+Start MySQL
+sudo /usr/local/mysql/support-files/mysql.server start
+
+Stop MySQL
+sudo /usr/local/mysql/support-files/mysql.server stop
+
+Restart MySQL
+sudo /usr/local/mysql/support-files/mysql.server restart
+=============
+set Path
+ sudo nano /etc/paths
+
+/usr/local/mysql/bin/mysql   -uroot -psmartant
+cd workspace 
+$> mysql -uroot -psmartant
+mysql > show databases;
+
+create schema nodejs;
+
+use  nodejs;
+source customer.sql

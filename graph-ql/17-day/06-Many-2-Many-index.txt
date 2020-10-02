@@ -1,0 +1,51 @@
+const dbConfig = require("../config/db.config.js");
+
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+
+  pool: {
+    max: dbConfig.pool.max,
+    min: dbConfig.pool.min,
+    acquire: dbConfig.pool.acquire,
+    idle: dbConfig.pool.idle
+  }
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
+db.students = require("./student.model.js")(sequelize, Sequelize);
+db.teachers = require("./teacher.model.js")(sequelize, Sequelize);
+db.subjects = require("./subject.model.js")(sequelize, Sequelize);
+
+/*
+// 1:1
+Organization.belongsTo(User, { foreignKey: 'owner_id' });
+User.hasOne(Organization, { foreignKey: 'owner_id' });
+
+// 1:M
+Project.hasMany(Task, { foreignKey: 'tasks_pk' });
+Task.belongsTo(Project, { foreignKey: 'tasks_pk' });
+
+// N:M
+User.belongsToMany(Role, { through: 'user_has_roles', foreignKey: 'user_role_user_id' });
+Role.belongsToMany(User, { through: 'user_has_roles', foreignKey: 'roles_identifier' });
+*/
+
+db.subjects.belongsToMany(db.students, { through: 'student_has_subjects', foreignKey: 'subject_id' });
+db.students.belongsToMany(db.subjects, { through: 'student_has_subjects', foreignKey: 'student_id' });
+
+db.subjects.belongsToMany(db.teachers, { through: 'teacher_has_subjects', foreignKey: 'subject_id' });
+db.teachers.belongsToMany(db.subjects, { through: 'teacher_has_subjects', foreignKey: 'teacher_id' });
+
+db.sessions = require("./session.model.js")(sequelize, Sequelize);
+
+db.subjects.hasMany(db.sessions, { foreignKey: 'subjectId' });
+db.teachers.hasMany(db.sessions, { foreignKey: 'teacherId' });
+module.exports = db;
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		1. Can you take help from internet ? YES
+		2. 30 - 45 min
+		3. Don't use await and async 
+		4. Can use setTimeout /setInterval
+		5. Can you also think of implementing it with out setTimeout /setInterval
+
+		*/
+		print = function(msg){
+			console.log(msg)
+		}
+		secondCounter = function(label,counter){
+			for (var i = 0; i < counter; i++) {
+				//sleep of 1 second
+				print(label +' '+ i +" seconds are over.");
+			}
+		}
+	</script>
+	<h4>Hello to training!!!!</h4>
+	<form>
+		<input type="" name="" value="India" >
+		<input type="" name="" >
+		<input type="button" name="" onclick="secondCounter('B1',20)" value="B1">
+		<input type="button" name="" onclick="secondCounter('B2',30)" value="B2">
+	</form>
+</body>
+</html>

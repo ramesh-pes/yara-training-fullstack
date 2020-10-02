@@ -1,0 +1,34 @@
+
+Download MySQL setup for windows
+http://training.pyther.com/rest-api/other/MySQL-server.zip
+uzip and install it
+
+It will ask for root password : 123456 (smartant)
+
+where smartant is password
+$> mysql -uroot -psmartant
+
+mysql>create schema nodejs;
+mysql> use nodejs;  
+download http://training.pyther.com/rest-api/03-day/nodecrud-mysql/customer.sql
+
+mysql > source <path of customer.sql>
+
+
+mysql> select * from customer;
+mysql > quit;
+
+--
+download http://training.pyther.com/rest-api/03-day/002-nodecrud-mysql.zip
+
+$> unzip  002-nodecrud-mysql.zip
+$> cd nodecrud-mysql 
+
+check nodecrud-mysql/app.js
+line number 46 (update password)
+
+> node app.js
+
+In browser OPEN
+http://localhost:4300/customers 
+

@@ -1,0 +1,32 @@
+download react customer project 
+http://training.pyther.com/yara/19-day/05-customer-react-graphql-start.zip
+
+cd customer-react-graphql
+yarn install
+yarn add apollo-fetch
+
+------
+COPY 
+component (CustomerApp => CustomerGQL)
+service (customer.js => customer-gql.js )
+------
+
+addition in customer-gql.js
+------
+export var getRecords = async function(){
+    let response = await fetch({
+        query: '{ customers { id,name,email,phone,address }}',
+      })
+    //let result = await response.json();
+    return response.data.customers;
+  }
+------
+
+change in CustomerGQL
+------
+  componentDidMount(){
+    getRecords().then((result)=>{
+        this.setState({items:result});
+    })
+  }
+

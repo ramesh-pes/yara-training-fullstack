@@ -1,0 +1,39 @@
+import React from "react";
+import { View, Text } from "react-native";
+
+const ViewBoxesWithColorAndText = () => {
+  return (
+    <View
+      style={{
+        flexDirection: "column",
+        height: 500,
+        padding: 20
+      }}
+    >
+      <View style={{ backgroundColor: "blue", flex: 1 }} />
+
+      <View
+      style={{
+        flexDirection: "row",
+        height: 100,
+        padding: 20,
+        flex: 4
+      }}
+    >
+      <View style={{ backgroundColor: "blue", flex: 1 }} />
+      <View style={{ backgroundColor: "red", flex: 4}} />
+
+      <View style={{ backgroundColor: "green", flex: 4}} >
+        <Text style={{ backgroundColor: "green", flex: 4}}  >Hello WorldC!</Text>
+      </View>
+      </View>
+
+      <View style={{ backgroundColor: "green", flex: 4}} >
+        <Text style={{ backgroundColor: "green", flex: 4}}  >Hello WorldC!</Text>
+      </View>
+
+    </View>
+  );
+};
+
+export default ViewBoxesWithColorAndText;

@@ -1,0 +1,18 @@
+console.log("Vivek");
+
+process.stdin.on('data', function(input){
+	console.log(input.toString());
+	console.log('input:'+input);
+});
+
+
+process.stdin.on('data', function(input){
+	console.log('Hello '+input);
+});
+
+process.stdin.on('data', function(input){
+	if(input.toString().startsWith('exit')){
+		process.exit();
+	}
+});
+

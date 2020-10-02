@@ -1,0 +1,15 @@
+
+// What is promise? 
+// Promise is deffered(future) event which (resolved, rejected)
+
+
+function msgAfterTimeout () {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve('Hello World'), 3000)
+    });
+}
+
+msgAfterTimeout().then(
+(msg)=>{ console.log('success is '+ msg);}
+);
+

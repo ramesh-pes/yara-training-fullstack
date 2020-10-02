@@ -1,0 +1,36 @@
+
+
+Promise getCustomer Implementation
+----------
+
+Step 1: Change in customer-mongo.js
+----
+service.getCustomersPromise = function(){
+  return new Promise((resolve, reject) => {
+
+    MongoClient.connect(url, { useNewUrlParser: true,useUnifiedTopology: true },function(err, client) {
+    assert.equal(null, err);
+    const db = client.db(dbName);
+      db.collection('customers').find().toArray(function (err, result) {
+        if (err) throw err
+        console.log(result);
+        resolve(result);
+      });
+    client.close();
+  });
+  });
+};
+----
+
+
+STEP 2: Change in api.js
+-----
+
+router.get('/customerp', function(req, res, next) {
+ 	customerMongo.getCustomersPromise()
+ 	.then(function(data){
+ 		res.send(data);
+ 	});
+});
+
+

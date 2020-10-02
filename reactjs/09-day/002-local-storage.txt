@@ -1,0 +1,19 @@
+localStorage.removeItem('user');
+localStorage.setItem('user', email);
+
+
+///Login
+               </FormGroup>
+               <Button color="primary" onClick={()=>{
+               if(email === password){
+                  localStorage.setItem('user',email);
+                  props.history.push('/customer-app');
+               }else{
+                  alert('Incorrect email or password. Please try again.')
+               }
+            }}>Submit</Button>
+
+//Logout menu
+      var doLogout = () =>{
+         localStorage.removeItem('user');
+      }            

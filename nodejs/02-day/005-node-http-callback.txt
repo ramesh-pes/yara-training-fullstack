@@ -1,0 +1,14 @@
+var http = require('http');
+// Tomcat / IBM WebSphere
+// Apache Service | IIS | .Net Server
+var count = 0;
+var server = http.createServer(function (req, res) {
+	console.log("request no "+ ++count );
+	res.statusCode = 200;
+	res.write('Hello World..');
+	res.end();
+});
+
+server.listen(3000);
+
+// Single threaded concurrent connection

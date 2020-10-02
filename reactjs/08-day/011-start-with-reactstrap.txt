@@ -1,0 +1,9 @@
+reactstrap
+----
+yarn add bootstrap
+yarn add reactstrap react react-dom
+
+Import Bootstrap CSS in the src/index.js file:
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+---

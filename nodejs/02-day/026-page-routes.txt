@@ -1,0 +1,30 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+
+// /rama + / = /rama
+router.get('/', function(req, res, next) {
+	res.redirect("/login");
+ // res.render('index', { title: 'Cusotmer App' });
+});
+
+// /rama + /home = /rama/home
+router.get('/home', function(req, res, next) {
+  res.render('index', { title: 'Home Page' });
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Login' });
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('index', { title: 'About' });
+});
+
+router.get('/customer', function(req, res, next) {
+  res.render('index', { title: 'Customers' });
+});
+
+module.exports = router;
+

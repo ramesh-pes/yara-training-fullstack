@@ -1,0 +1,23 @@
+import React from 'react';
+
+export default class Person extends React.Component{
+    name = "test"
+    constructor(props){
+        super(props);
+        this.name = props.name;
+    }
+    render(){
+        return (
+            <div>
+            <h4>Name:{this.name}</h4>
+            <button onClick={this.updateName} >update Name</button>
+            </div>
+          );
+    }
+    updateName = ()=>{
+        this.name = "India";
+        alert(this.name);
+        //India
+    }
+}
+

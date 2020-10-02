@@ -1,0 +1,7 @@
+
+download: http://training.pyther.com/yara/02-day/017-socket.io-master-chat-example.zip
+
+unzip 017-socket.io-master-chat-example.zip
+cd socket.io-master/examples/chat
+
+node index.js

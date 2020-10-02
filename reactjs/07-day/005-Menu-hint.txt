@@ -1,0 +1,87 @@
+
+Implementing Menu
+---------
+---------
+
+Step 1: (add Component)
+------------
+create file src/components/Menu.js
+---
+import React from 'react';
+   function Login() {
+      return (
+         <div>
+            <h3>Customer App</h3>
+            <h3>Login</h3>
+         </div>
+      );
+   }
+    export default Login;
+
+---
+
+Step 2: Update src/App.js
+----
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Person from './components/Person';
+import Student from './components/Student';
+import Timer from './components/Timer';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './containers/Home';
+import Login from './containers/Login';
+import About from './containers/About';
+import Customer from './containers/Customer';
+import NoPageFound from './containers/NoPageFound';
+
+function App() {
+  return (
+    <Router>
+    <div>
+       <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/customer' component={Customer} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='*' component={NoPageFound} />
+       </Switch>
+    </div>
+ </Router>
+  );
+}
+export default App;
+-----
+
+Step 3: (Update Home|About|Customer) Add Menu
+------------
+create file src/components/Menu.js
+---
+import React from 'react';
+import Menu from '../components/Menu';
+   function About() {
+      return (
+         <div>
+            <Menu/>
+            <h2>About</h2>
+         </div>
+      );
+   }
+    export default About;
+---
+
+
+Step 4: Improve Login
+-----
+import React from 'react';
+   function Login() {
+      return (
+         <div>
+            <h3>Customer App</h3>
+            <h3>Login</h3>
+         </div>
+      );
+   }
+    export default Login;
+

@@ -1,0 +1,13 @@
+Server  (port 4000) Node (REST) 
+========
+Clinet  (port 3000) ReactJS (Browser) www.rama.com
+
+Browser => DOM + JS
+Node => Process + JS
+ 
+-------
+program
+server / client and service
+GMAIL 
+-------
+

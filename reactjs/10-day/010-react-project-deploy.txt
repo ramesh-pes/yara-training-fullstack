@@ -1,0 +1,8 @@
+cd customer-main-app
+yarn build
+// this should create folder / contant under build
+
+copy build/* under public folder of node project
+
+then rune your node project and then check
+http://localhost:4000/

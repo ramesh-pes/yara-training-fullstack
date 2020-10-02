@@ -1,0 +1,18 @@
+      var addUpdateCustomer=()=>{
+         var methodType = 'post';
+         var customer = {name:name,email:email,phone:phone,address:address};
+         if(id!=0){ //for edit
+            methodType = 'put';
+            customer.id = id;
+         }
+         fetch(apiCustomer,{
+            method: methodType,
+            body:JSON.stringify(customer),
+            headers: {
+               'Accept': 'application/json',
+               'Content-Type': 'application/json'
+            }
+         }) .then(function(result){
+               props.history.push('/customer');
+            }) 
+      }

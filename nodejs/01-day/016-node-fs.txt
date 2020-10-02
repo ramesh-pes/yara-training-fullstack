@@ -1,0 +1,45 @@
+//fs is predefined node module
+const fs = require('fs');
+
+console.log("Vivek");
+var commands = {
+'pwd': function () {
+	console.log(process.cwd());
+	},
+'sum': function (args) {
+	let sum = 0;
+	for (var i = 0; i <args.length; i++) {
+		if(!isNaN(Number(args[i]))){
+			sum = sum + parseInt(args[i]);
+		}
+	}
+	console.log('sum is '+sum);
+	},
+'exit': function (args) {
+	process.exit();
+	},
+'ls': function (args) { // New property added here.
+		fs.readdir(args[0] || process.cwd(), function (err, entries) {
+			entries.forEach(function (e) {
+				console.log(e);
+			});
+		});
+	}
+};
+
+process.stdin.on('data', function (input) {
+	//"sum 2 4"
+	var matches = input.toString().match(/(\w+)(.*)/);
+	//matches[0] 
+	var command = matches[1].toLowerCase();
+	// sum is command
+
+	var args = matches[2].trim().split(/\s+/);
+	try{
+		commands[command](args);
+	}catch(e){
+		console.log(e);
+		console.log(command +' command not found.');
+	}
+	//commands['sum']([3,4]);
+});

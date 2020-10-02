@@ -1,0 +1,41 @@
+
+Todo:
+Add REST API for customer resource '/api/customer'
+
+Hint 1: (similar to usersRouter) add apiCustomer (file app.js)
+----
+.
+.
+var apiCustomer = require('./routes/customer-api');
+.
+.
+.
+app.use('/api/customer', apiCustomer);
+..
+
+
+Hint 2: create filr customer-api.js
+Add API from day 2 
+--
+var express = require('express');
+var router = express.Router();
+
+var customers = [
+	{id:1, name:'Vivek', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:2, name:'Rama', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:3, name:'Krishna', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:4, name:'Rahim', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'}
+];
+
+
+router.get('/', function (req, res) {
+	res.send(customers);
+});
+
+-----
+
+
+Test API: with Postman
+-----
+/api/customer
+

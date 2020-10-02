@@ -1,0 +1,7 @@
+              <Button onPress={()=>{
+                if(Platform.OS === 'ios'){
+                  alert('OS is iOS');
+                }else if (Platform.OS === 'android'){
+                  alert('OS is Android');
+                }
+              }} title="PlatformInfo"></Button>

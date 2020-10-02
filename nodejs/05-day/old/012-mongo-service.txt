@@ -1,0 +1,39 @@
+
+Step 1: add file customer-mongo.js
+--------
+var MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+
+// _id
+var service= {};
+var dbName = 'nodejs';
+const url = 'mongodb://localhost:27017';
+
+service.getCustomers = function(callback){
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true},
+    function(err, client) {
+    assert.equal(null, err);
+    const db = client.db(dbName);
+      db.collection('customers').find().toArray(function (err, result) {
+        if (err) throw err
+        console.log(result);
+        callback(result);
+      });
+    client.close();
+  });
+};
+
+module.exports=service;
+
+----
+
+Step 2: 
+change on api.js (to it yourself)
+
+Step 3: 
+change on index.js (to it yourself)
+
+Step 4: 
+change on customer.ejs (to it yourself)
+

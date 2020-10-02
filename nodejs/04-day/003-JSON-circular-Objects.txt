@@ -1,0 +1,8 @@
+JSON
+JSON.stringify
+JSON.parse  string => Object 
+
+school = JSON.parse(
+'{"clasess":[{"name":"class1","noOfStudents":12,"students":[{"name":"Vivek13","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek12","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek11","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek10","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek9","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek6","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek8","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek6","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek3","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek3","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek5","age":23,"address":"Ahmedabad","parentName":"Abc"},{"name":"Vivek2","age":23,"address":"Ahmedabad","parentName":"Abc"}]}]}')
+
+Circulart Objects

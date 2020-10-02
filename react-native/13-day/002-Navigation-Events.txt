@@ -1,0 +1,10 @@
+//https://reactnavigation.org/docs/navigation-events/
+  React.useEffect(() => {
+    const unsubscribe = props.navigation.addListener('focus', () => {
+     console.log("props.navigation.addListener...");
+      DATA = customerLocal.getCustomers();
+      console.log("props.navigation.addListener..."+DATA.length);
+      setCounter(Date.now());
+    });
+    return unsubscribe;
+  }, [props.navigation]);

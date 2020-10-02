@@ -1,0 +1,28 @@
+const http = require('http')
+
+const options = {
+  hostname: 'training.pyther.com',
+  port: 3000,
+  path: '/api/users',
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhZG1pbiI6InZpdmVrIiwiaWF0IjoxNTc2NjY0NTQyLCJleHAiOjE1NzY3NTA5NDJ9.iTDQCWyl1KvynO0FZFxRtozGchwpiMdxcZQcBfHceKE'
+  }
+
+}
+
+//http://training.pyther.com:3000/api/users?token=
+const req = http.request(options, res => {
+  console.log(`statusCode: ${res.statusCode}`)
+
+  res.on('data', d => {
+    process.stdout.write(d)
+  })
+})
+
+req.on('error', error => {
+  console.error(error)
+})
+
+req.end();

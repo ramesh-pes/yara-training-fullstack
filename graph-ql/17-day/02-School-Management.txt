@@ -1,0 +1,44 @@
+
+-----------
+1. Student (for sure)  id, name, all
+{id,name,email,phone,address,parentName}
+
+2. Teacher (for sure) id, name, all  (type {admin, normal})
+{id,name,email,phone,address,password,type}
+
+3. Subject id, name, details, standard, section
+{id,name,standard,section,toc}
+
+4. TeacherSubject Many<=>Many {idTeacher,idSubject}
+{idPK(idTeacher+idSubject), idTeacher,idSubject} candidate Key
+
+5. StudentSubject Many<=>Many {idStudent,idSubject}
+{idPK(idStudent+idSubject), idStudent,idSubject}  candidate Key
+
+Class / Session
+6. Class id(PK), idSubject, idTeacher, other attributes time 
+{id,idSubject,idTeacher,startTime(day-time), duration (30min/ 2/3/4/5)}
+
+Add dummy data (say few 20+)
+-----
+Q. student: Amit (11)
+list all subject
+list all session 
+list of all his teacher
+
+Q. teacher: Rama (4)
+1. IsAdmin ?
+2. subject for Rama
+3. List of all his students
+4. based on date today (list classes of Rama + subject + students)
+
+Stage 1 ()
+
+
+PGSQL (http://127.0.0.1:58020/browser/)
+Sequelize
+Express
+REST 
+----
+ReactJS
+

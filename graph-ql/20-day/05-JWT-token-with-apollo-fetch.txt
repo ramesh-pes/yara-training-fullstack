@@ -1,0 +1,15 @@
+const { createApolloFetch } = require('apollo-fetch');
+const fetch = createApolloFetch({
+	uri: 'http://localhost:4000/graphql',
+	headers: {
+		"authorization":"rama"
+	  },
+  });
+
+  fetch.use(({ request, options }, next) => {
+	options.headers = {
+	  "authorization": "rama"
+	};
+	next();
+  });
+

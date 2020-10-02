@@ -1,0 +1,17 @@
+
+REST:
+Representational State Transfer) 200
+---
+
+REST in json is industry standard 
+-------
+1 server name (api.example.com:3000)
+2. method (GET, POST(add), PUT(update), Delete(delete))
+3. url /api/customer 
+/api/customer  (our resource is customer)
+4. data ({} ) + content type is txt, json 
+
+/api/customer (GET)
+/api/customer (POST)
+/api/customer (PUT)
+/api/customer (DELETE)

@@ -1,0 +1,20 @@
+const API_BASEURL = 'http://localhost:4000/api/customer';
+    export var getCustomers = async function(){
+        let response = await fetch(API_BASEURL);
+        let customers = await response.json();
+        console.log(JSON.stringify(customers));
+        return customers;
+      }
+      export var deleteCustomer = async function(id){
+        console.log("deleteCustomer:"+id);
+        let response = await fetch(API_BASEURL,{
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+             },
+            method:"delete",
+            body:JSON.stringify({id:id})
+        });
+        let result = await response.json(); 
+        return result;
+    } 

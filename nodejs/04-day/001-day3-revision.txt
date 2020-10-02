@@ -1,0 +1,20 @@
+day-3 revision.txt
+-------------
+Simran:=> loose coupling  model / route separation
+Uddip:=> html - add button
+Pranjal => Ajax (with QJuery)
+Nidhi => Selector | Actor
+Abhilash => Create API (REST) / client comsuption of API
+Ramesh Kumar => Router ( object error )
+Ashwin => Routing parameter passing  /search/:field/:search
+Soumya => public folder 
+Ramesh S =>  getById for Edit (get record to edit)
+Suraksha => GUI views separation 
+Shashank => Search implementation
+Sidharth => Login server api implementation
+Syed => Customer / Student CRUD 
+Apeksha => 
+Akshith =>  EJS dynamic with array 
+expression 
+----------------
+Study leaf (plant leaf)

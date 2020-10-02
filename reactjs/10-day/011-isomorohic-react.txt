@@ -1,0 +1,24 @@
+
+Server Side
+-----
+1. every page gui is created from scratch in server. and page is generated on server and provided to browser . here it is a page
+2. example is : ejs , php, jsp,asp , SSR 
+3. server load is high
+4. Every page is loaded from the scratch
+5. example: yara.com (slow)
+6. SEO (google) Serach / Ranking is Good
+
+Client Side
+------
+1. Here it is an App (index.html) + javascript 
+2. Angular , React , Vue, GWT, Sencha and many more
+3. client load is high 
+4. example:http://test.pyther.com/ (fast)
+6. SEO (google) Serach / Ranking is not supported
+7. old / week internet would be a problem
+=========
+
+React come up with isomorphic react
+react client
+react SSR
+

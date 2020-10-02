@@ -1,0 +1,6 @@
+Understand Timer component
+(Ask me if any Question)
+
+a) add button 'start' 
+b) add button 'stop' 
+b) add button 'reset' => counter to 0

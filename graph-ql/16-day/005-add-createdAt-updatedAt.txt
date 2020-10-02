@@ -1,0 +1,2 @@
+ALTER TABLE customer ADD createdAt timestamp default now();
+ALTER TABLE customer ADD updatedAt timestamp default now();

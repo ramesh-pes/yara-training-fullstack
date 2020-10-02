@@ -1,0 +1,19 @@
+
+React Navigation
+------------
+Stack Navigation
+
+1. Stack Navigation
+
+What is Stack?
+
+In E => () => navigation.navigate('F')}
+
+In F => () => navigation.navigate('E')}
+------
+ABCDEFEFEFEF 
+------
+
+We have to understand Events 
+React Navigation Events
+

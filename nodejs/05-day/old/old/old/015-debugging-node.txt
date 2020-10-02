@@ -1,0 +1,13 @@
+debugging @ node environment
+------
+ node inspect main.js
+ debugger; in code
+ -----
+ next
+ cont
+ repl
+ i 
+ crtl + C
+ .exit 
+
+ ----------------------

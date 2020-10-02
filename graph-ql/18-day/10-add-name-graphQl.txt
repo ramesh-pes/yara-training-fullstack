@@ -1,0 +1,31 @@
+
+alter table bacons add name varchar(48);
+update bacons set name='India';
+update bacons set name='USA' where id > 6;
+
+-----
+Add name type in Model file i.e. 
+bacon/type.js
+--
+.
+.
+        name: {
+            type: new GraphQLNonNull(GraphQLString)
+        },
+.
+.
+.
+
+=======
+
+In file bacon/queries.js
+
+-------
+.
+.
+            name: {
+                type: GraphQLString
+            },
+.
+.
+.            

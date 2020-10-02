@@ -1,0 +1,40 @@
+
+-------
+Component
+Nesting of Component
+Service
+props,states + variables
+child / parent
+setState
+useState, useEffect, fetech 
+third party components, example bootstrap 
+props.name
+props.email
+props.childern
+Routes
+-------
+
+
+
+App
+=======
+<div>
+	<Customers> 
+</div>
+=======
+
+Customers
+------
+map=>
+<Customer name="" email="">
+
+</Customer>
+------
+
+Customer
+---
+<div>
+<CompX>
+</div>
+---
+

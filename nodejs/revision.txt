@@ -1,0 +1,32 @@
+Whole week:
+--------------
+1. Syed:  express framework | search implemention with database
+
+2. Akshith :socket io (single threaded)| JWT
+3. Pranjal: DOM | jQuery 
+4. Apeksha: promise and await | pool connection in Mysql
+5. Ashwin: setTimeout / setInterval |es6 script 
+6. Abhilash: MySQL DB connect | => function 
+7. Ramesh Kumar: 1 Clinet <=> Service | express flow control  
+
+8. Shashank: 1 OOPS | dynamic html {} ==> EJS 
+9. Sidharth: 1. what is NodeJS | CRUD Customer 
+
+10. Nidhi: express-session | http error coded
+11: Uddip : scope of let, var, this | next parameter next function 
+12. Soumya: 1.process.stdin.on | cookie 
+13. Suraksha:  API (REST) | json circular object 
+14. Simran: package.json | Java vs JS 
+15. Ramesh: model <=> Routes | View EJS 
+
+Dev One | App    lib(callback)  need to return (I will handle) async 
+Dev Two | Lib ABC  
+
+========
+callback A ==> B(callback)
+promise  ==> return promise 
+async => return  promise({name:vivek})
+await => 
+
+await async 
+

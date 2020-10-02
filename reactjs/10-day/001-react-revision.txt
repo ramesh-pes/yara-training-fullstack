@@ -1,0 +1,26 @@
+revision React first 4 days:
+--------------
+1. Syed:  DOM | Virtual DOM 
+2. Akshith :React lib / bootstrap / foundation / other
+3. Pranjal: props with fuction passing
+4. Apeksha: component life (more with class comp)
+5. Ashwin: localStorage / sessionStage 
+6. Abhilash: fetch (REST API calling)
+7. Ramesh Kumar: props (pratent => child)
+8. Shashank: state (function / class comp) 
+9. Sidharth: binding this / ()=>{}
+10. Nidhi: babel (trans script ES support + JSX)
+11: Uddip : HOC   connect()(todo)
+12. Soumya: cors (Cross Origin Request)
+13. Suraksha:  SPA (index.html)
+14. Simran: context (params)
+15. Ramesh: React Router Switch / Links (Menu)
+-----
+composition
+authentication
+ref 
+Redux / Flux
+useEffect
+hooks 
+children
+

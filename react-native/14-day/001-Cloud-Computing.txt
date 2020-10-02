@@ -1,0 +1,36 @@
+REMOTE
+One Server | One OS | One Customer
+One Server | One OS | Many Customers (Shared OS)
+One Server | Multiple OS VM | Many Customers (Shared OS)
+Multple Server | Cloud |  Multiple OS VM | Many Customers (Shared OS)
+
+
+AWS => software | hardare | mandatory SSL 
+trojan horse 
+
+========
+Node (service) REST API
+========
+N number of services REST API
+
+Database (Mongo)
+-------
+
+Node CustomerMongo.js (MongoDB)
+----
+Node|>  S1 | S2 | S3 | 
+/api/customer 
+GET
+POST (ADD)
+PUT (update)
+Delete (delete)
+
+Web |> REact  | setState(Class) | setCounter(functional Comp)
+
+Add |> React Native  | setState(Class) | setCounter(functional Comp)
+----
+
+React
+REactNative
+GraphQL
+Postgres

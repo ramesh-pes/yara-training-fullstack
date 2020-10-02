@@ -1,0 +1,29 @@
+
+1. Student (for sure)  id, name, all
+2. Teacher (for sure) id, name, all  (type {admin, normal})
+3. Subject id, name, details, standard, section
+4. TeacherSubject Many<=>Many {idTeacher,idSubject}
+5. StudentSubject Many<=>Many {idStudent,idSubject}
+
+
+Class / Session
+6. Class id, idSubject, idTeacher , other attributes time 
+
+
+
+---------
+4. TeacherSubject Many<=>Many {idTeacher,idSubject}
+	3 (TVivek) | 4(Maths)
+	3 (TVivek) | 5(Science)
+	6 (TNeha) | 5(Science)
+
+5. StudentSubject Many<=>Many {idStudent,idSubject}
+	1 (TAmit) | 4(Maths)
+	2 (TAshu) | 4(Maths)
+	6 (TAsha) | 5(Science)
+
+
+ Many<=>Many<=> Many
+
+---------------
+

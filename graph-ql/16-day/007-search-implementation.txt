@@ -1,0 +1,69 @@
+
+var express = require('express');
+var model = require('../service/customer');
+const Customer = require('../models/customer');
+var router = express.Router();
+
+// end point is  /api/customer
+// method get ==>  get records
+router.get('/', async(req, res, next) => {
+  await Customer.findAll().then((result)=>{
+    res.send(result);
+  })
+});
+
+router.get('/:id', async (req, res, next) => {
+    await Customer.findOne({
+        where:{id:req.params.id}
+    }).then((result)=>{
+      res.send(result);
+  })
+});
+
+router.get('/search/:field/:searchText', async (req, res, next) => {
+  const Op = Sequelize.Op;
+  let data = await Customer.findAll({
+    where: {
+      [req.params.field]: {
+        [Op.like]: '%'+req.params.searchText+'%'
+      }
+    }
+  });
+  res.send(data);
+});
+
+// method post ==>  add record
+router.post('/', async (req, res, next) => {
+  await Customer.create(req.body).then(()=>{
+    res.send({result:'success', msg:"customer added successfully"});
+  },(result)=>{
+    console.log(result);
+    res.send({result:'failed', msg:"Unable to add Customer"});
+  })
+  });
+// method delete ==>  delete record
+router.delete('/', async (req, res, next) => {
+   console.log("req.body:"+ JSON.stringify(req.body));
+  await Customer.destroy(
+    { where: { id: req.body.id } }
+  ).then(result =>
+    res.send({result:'success', msg:"customer deleted successfully"}),
+  err =>
+    res.send({result:'fail', msg:"customer updatation failed"})
+  )
+  });
+
+// method put ==>  update record
+// method put ==>  update record
+router.put('/', async (req, res, next) => {
+  await Customer.update(req.body,
+    { where: { id: req.body.id } }
+  ).then(result =>
+    res.send({result:'success', msg:"customer updated successfully"}),
+  err =>
+    res.send({result:'fail', msg:"customer updatation failed"})
+  )
+  });
+  
+module.exports = router;
+

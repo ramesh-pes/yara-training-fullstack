@@ -1,0 +1,44 @@
+// create a service
+
+STEP 1:
+customer-mysql.js
+-------
+.
+.
+.
+service.addCustomer = function(customer,callback) {
+        pool.getConnection(function(err, connection) {
+        if(err) { console.log(err); callback({result:"fail"}); return; }
+        	connection.query("INSERT INTO customer set ? ",customer, function(err, results) {
+          if(err){
+           console.log("Error Selecting : %s ",err );
+           callback({result:"fail"});
+          }else{
+           callback({result:"success"});
+         }
+      });
+    });
+};
+..
+.
+.
+--------
+ 
+
+STEP 2: routes/api.js (change ==> post /api/customer)
+------
+.
+.
+//   post /api/customer
+router.post('/customer', function(req, res, next) {
+	var callback = function(data){
+		res.send(data);
+	}
+  	customerMysql.addCustomer(req.body,callback);
+});
+.
+.
+.
+-----
+
+

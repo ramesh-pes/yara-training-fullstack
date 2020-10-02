@@ -1,0 +1,15 @@
+1. setup Android Studio (Java 8)
+https://developer.android.com/studio
+
+2. Themes 
+a. Native Base example
+b. https://www.creative-tim.com/product/material-kit-react-native/?partner=91096#
+
+3. Native Modules 
+   RCT Bridge
+   Exmaple with iOS
+   Exmaple with Android
+
+4. Build an App 
+   Changing the launch icon 
+   (iOS and Android)

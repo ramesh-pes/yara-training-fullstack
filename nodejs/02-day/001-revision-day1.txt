@@ -1,0 +1,25 @@
+http://training.pyther.com/yara/01-day/
+
+Revision:
+---------
+1. OOPS (function / inner function) => emcapulation . p = new Person(); (Simram)
+2. Script .. document.bgColor ='red'; (Apeksha)
+3. scope let /var (Pranjal)
+4. function / function call () / (Ramesh)
+5. Types (number, string) (Ramesh)
+6. DOM window.document.forma[0].elements[0].value (Abhilash)
+7. modules (mathLib) / fs  (Akshith)
+8. Node  / node.exe (node REPL) (Nidhi)
+9. Object = {name:'Vivek'} (Ashwin)
+10. html setTimeout / setInternal (Shashank)
+11. this pointer to current object (Suraksha)
+12. callback => passsing a function (to be call on event done) (Soumya)
+13. lower level and high level (evolution of languages ) (Uddip)
+14. cwd => command program cwd (Siddharth)
+15. process.stdin.on('data', function(){}) (Syed)
+global.y = "name"  
+node <=> Java
+
+
+
+

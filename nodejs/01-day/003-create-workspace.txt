@@ -1,0 +1,8 @@
+open command prompt
+----
+$> cd ..
+$> cd ..
+
+$> mkdir workspace 
+$> node -v 
+

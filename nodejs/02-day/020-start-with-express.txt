@@ -1,0 +1,34 @@
+
+Start with Express:
+-------
+cd sample-app
+
+main.js
+-------
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+	res.send('Hello World!');
+});
+
+app.get('/about', function (req, res) {
+	res.send('Hello About Page!');
+});
+
+app.get('/home', function (req, res) {
+	res.send('Hello Home Page!');
+});
+
+
+var server = app.listen(3000, function () {
+	console.log('Example app listening at http://localhost:3000');
+});
+--------
+
+npm i express
+
+nodemon main.js
+
+http://localhost:3000/
+

@@ -1,0 +1,21 @@
+Products developed in Java is proved to longest SL
+==================
+
+Java    | JS
+lan     | script (1)
+OOPS (1)| OOPS (1)
+PL (1)  | PL (1)
+no GUI  | GUI (1)
+no event| Event callback (1)
+Slow    | Fast (1)
+high mem| less memory (1)
+
+----------
+OOPs (RW) 
+Java is OOPS in run time / execution 
+1000 object all 1000 objects in memory 
+
+JavaScript is OOPS RW is OOPS
+but is CPU is NOT OOPS 
+
+

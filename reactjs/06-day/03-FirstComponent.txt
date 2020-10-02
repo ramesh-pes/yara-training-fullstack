@@ -1,0 +1,40 @@
+Step 1: ./components/Person.js
+-------
+import React from 'react';
+
+export default function Person() {
+  return (
+    <div>
+    <h4>Name: Vivek</h4>
+    </div>
+  );
+}
+
+export function Rama() {
+    return (
+      <div>
+      <h4>Name: Rama</h4>
+      </div>
+    );
+  }
+  
+------
+
+Step 2: App.js 
+---------
+import React from 'react';
+import './App.css';
+import {Rama} from './components/Person';
+
+function App() {
+  return (
+    <div className="App">
+    <h4>Hello to React</h4>
+    <Rama/>
+    </div>
+  );
+}
+
+export default App;
+-------------
+

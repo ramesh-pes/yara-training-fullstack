@@ -1,0 +1,25 @@
+
+1. Disable security (express-session)
+-----
+2. enables cors
+
+-----
+npm install cors
+
+in app.js
+---
+.
+.
+var cors = require('cors')
+.
+.
+.
+
+app.use(cors());
+// view engine setup
+..
+
+.
+
+https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+.

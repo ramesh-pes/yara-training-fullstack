@@ -1,0 +1,19 @@
+JSX == JS + HTML
+=========
+sampleJSX = <h3>Rama </h3>
+
+
+---
+babel
+---
+https://babeljs.io/repl
+=====
+JSX + ES => javascript 
+
+
+=========
+GUI + code associated with that GUI must to closely tied tograther + CSS
+=========
+JSX => html + JS
+=========
+In Java, like you can copy / paste class and reuse it same can be achieved with React Component 

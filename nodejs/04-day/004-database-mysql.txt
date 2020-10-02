@@ -1,0 +1,11 @@
+MySQL
+macOS: http://training.pyther.com/mysql-5.7.31-macos10.14-x86_64.dmg
+windows: http://training.pyther.com/MySQL-server.zip
+
+MongoDB:
+macOS : http://training.pyther.com/mongodb-macos-x86_64-4.4.1.tgz
+win: http://training.pyther.com/mongodb-win32-x86_64-2012plus-v4.2-latest.zip
+
+PG Database:
+http://training.pyther.com/postgresql-12.4-1-osx.dmg
+

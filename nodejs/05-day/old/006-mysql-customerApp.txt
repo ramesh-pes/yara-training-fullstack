@@ -1,0 +1,72 @@
+Integrate mysql with customerAPP
+--------
+Step 1:  craete service/customer-mysql.js
+---
+var mysql = require('mysql');
+var pool  = mysql.createPool({
+  connectionLimit : 10,
+  host            : 'localhost',
+  user            : 'root',
+  password        : 'smartant',
+  database        : 'nodejs'
+});
+ 
+var service = {};
+
+service.getCustomers = function(callback){
+	pool.query('SELECT * from customer', function (error, results, fields) {
+  	if (error) {
+  		callback([]);
+  		throw error;
+  	}else{
+  		callback(results);
+  	}
+	});
+}
+
+
+module.exports=service;
+---
+
+Step 2:  Modify api.js
+--
+.
+.
+var customerMysql = require('../service/customer-mysql');
+.
+.
+//modify 
+.
+
+router.get('/customer', function(req, res, next) {
+ // res.send(customerService.getCustomers());
+ // callback
+ // promise
+ // await / async
+ var callback = function(data){
+   res.send(data);
+ }
+ customerMysql.getCustomers(callback);
+});
+-----
+check :
+http://localhost:3000/api/customer
+
+Step :3 : Modify index.js
+---
+.
+.
+var customerMysql = require('../service/customer-mysql');
+.
+.
+//modify 
+.
+router.get('/customer', function(req, res, next) {
+  var callback = function(data){
+    res.render('customers', { title: 'Customers',data:data});
+  }
+  customerMysql.getCustomers(callback);
+});
+---
+check: 
+http://localhost:3000/customer

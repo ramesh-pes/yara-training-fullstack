@@ -1,0 +1,5 @@
+
+Download and setup mongo DB on your machine:
+http://training.pyther.com/rest-api/other/mongodb-win32-x86_64-2012plus-v4.2-latest.zip
+
+

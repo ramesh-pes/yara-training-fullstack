@@ -1,0 +1,8 @@
+https://sequelize.org/v3/api/sequelize/
+-----
+1. Integrate Sequelize with customer-api / customer table
+2. place validation fro Name (must be minimum 3 chars non number)
+3. PLace validation for email 
+4. PLace validation for phone (blank is OK)  number minimum 8 
+5. Handle it with alert on GUI
+

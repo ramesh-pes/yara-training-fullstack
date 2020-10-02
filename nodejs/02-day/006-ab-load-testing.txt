@@ -1,0 +1,7 @@
+
+https://httpd.apache.org/docs/2.4/programs/ab.html
+------
+ ab -n1000 -c100  http://localhost:3000/
+------ 
+
+

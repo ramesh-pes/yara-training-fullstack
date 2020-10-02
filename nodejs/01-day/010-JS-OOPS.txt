@@ -1,0 +1,18 @@
+Is JavaScript in OO or not?
+
+Encapsulation: ==>
+-------
+	Person() name + getName
+
+Encapsulation implmemation in Classes
+-------
+
+Person = function(){
+	var name = "" //private
+	this.name = "Vivek"; //object copy public
+	this.getName = function(){ return this.name; }
+}
+
+p = new Person();
+p.getName();
+

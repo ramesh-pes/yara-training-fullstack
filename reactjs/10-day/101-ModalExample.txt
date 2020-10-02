@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
+
+const ModalExample = (props) => {
+  const {
+    buttonLabel,
+    className
+  } = props;
+  const [modal, setModal] = useState(false);
+  const [backdrop, setBackdrop] = useState(true);
+  const [keyboard, setKeyboard] = useState(true);
+
+  const toggle = () => setModal(!modal);
+
+  const changeBackdrop = e => {
+    let value = e.target.value;
+    if (value !== 'static') {
+      value = JSON.parse(value);
+    }
+    setBackdrop(value);
+  }
+  const modelTitle = 'Your payment is pending.';
+
+  const changeKeyboard = e => {
+    setKeyboard(e.currentTarget.checked);
+  }
+  const onModelButton = e => {
+    console.log('hello');
+  }
+  return (
+    <div>
+      <Form inline onSubmit={(e) => e.preventDefault()}>
+        <FormGroup>
+          <Label for="backdrop">Backdrop value</Label>{' '}
+          <Input type="select" name="backdrop" id="backdrop" onChange={changeBackdrop}>
+            <option value="true">true</option>
+            <option value="false">false</option>
+            <option value="static">"static"</option>
+          </Input>
+        </FormGroup>
+        <FormGroup className="mx-2" check>
+          <Label check>
+            <Input type="checkbox" checked={keyboard} onChange={changeKeyboard} /> Keyboard
+          </Label>
+        </FormGroup>
+        {' '}
+        <Button color="danger" onClick={toggle}>Modal Example</Button>
+      </Form>
+      <Modal isOpen={modal} toggle={toggle} className={className} backdrop={backdrop} keyboard={keyboard}>
+    <ModalHeader toggle={toggle}>{modelTitle}</ModalHeader>
+        <ModalBody>
+          This is sample j h jhjhjhjhjh
+          <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" id="exampleEmail"  placeholder="with a placeholder" />
+            </FormGroup>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={onModelButton}>Test button</Button>
+          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  );
+}
+
+export default ModalExample;

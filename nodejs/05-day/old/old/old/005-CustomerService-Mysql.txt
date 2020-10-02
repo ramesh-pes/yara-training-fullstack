@@ -1,0 +1,67 @@
+
+Step 1
+create a service for mysql
+name it services/customer-mysql.js
+------
+var mysql = require('mysql');
+
+var service = {};
+var pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password : 'smartant',
+    port : 3306, //port mysql
+    database:'nodejs',
+    connectionLimit: 10,
+    supportBigNumbers: true
+});
+
+//async 
+service.getCustomers = function(callback){
+  var sql = "SELECT * FROM customer";
+  pool.getConnection(
+  	function(err, connection) {
+    if(err) { console.log(err); callback([]); return; }
+    connection.query(sql, function(err, results) {
+      connection.release();
+      if(err) { console.log(err); callback([]); return; }
+      callback(results);
+    });
+  });
+};
+
+module.exports=service; 
+
+-------
+
+Step 2:
+-----
+make a change  in index.js
+add require 
+var customerSqlService = require('../services/customer-mysql');
+----
+router.get('/customer', function(req, res, next) {
+	let callback = function(list){
+		res.render('customer', { title: 'Customer',data:list});
+	}
+	customerSqlService.getCustomers(callback);
+});
+
+-----
+
+Step 3:
+-----
+make a change  in apiCustomer.js
+add require 
+var customerSqlService = require('../services/customer-mysql');
+----
+router.get('/', function(req, res, next) {
+  let callback = function(list){
+   res.send(list);
+  }  
+  customerSqlService.getCustomers(callback);
+});
+
+
+
+

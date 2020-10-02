@@ -1,0 +1,19 @@
+1. ALTER TABLE customer ADD dob timestamp;
+
+2. change in customer/type.js 
+.
+.
+        dob: {
+            type: new GraphQLNonNull(GraphQLDate)
+        }
+---
+
+
+3. change in customer/queries.js 
+.
+.
+---
+            dob: {
+                type: GraphQLDate
+            }
+---

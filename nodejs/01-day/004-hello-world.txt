@@ -1,0 +1,8 @@
+Create a file hello.js under workspace
+------
+console.log('Home World..');
+------
+
+go to command prompt
+cd <workspace>
+node hello.js

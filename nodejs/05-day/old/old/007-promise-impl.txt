@@ -1,0 +1,40 @@
+promise implementatiom
+
+---
+$> cd customerApp
+$> npm install  node-promise
+
+Step 2:
+Update customer-mysql.js
+
+---
+.
+.
+var Promise = require("node-promise").Promise;
+.
+.
+//modify 
+service.getCustomers = function(){
+	var promise = new Promise();
+	pool.query('SELECT * from customer', function (error, results, fields) {
+  	if (error) {
+  		promise.resolve([]);
+  		throw error;
+  	}else{
+  		promise.resolve(results);
+  	}
+	});
+	return promise;
+}
+-----
+
+Step 3: api.js 
+---
+//modify 
+router.get('/customer', function(req, res, next) {
+ customerMysql.getCustomers().then(
+   function(result){
+   res.send(result);
+ });
+});
+

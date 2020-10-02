@@ -1,0 +1,83 @@
+
+For add / update and delete (make changes in customer-sql)
+-----
+Step 1 (addition in customer-sql.js)
+----
+service.addCustomer = function(customer,callback) {
+        pool.getConnection(function(err, connection) {
+        if(err) { console.log(err); callback({result:"fail"}); return; }
+        connection.query("INSERT INTO customer set ? ",customer, function(err, results) {
+          if(err){
+           console.log("Error Selecting : %s ",err );
+           callback({result:"fail"});
+          }else{
+           callback({result:"success"});
+         }
+      });
+    });
+};
+
+service.deleteCustomer = function(id,callback){
+  var sql = "delete FROM customer where id='"+id+"'";
+  pool.getConnection(function(err, connection) {
+    if(err) { console.log(err); callback({result:"fail"}); return; }
+    // make the query
+    connection.query(sql, function(err, results) {
+      connection.release();
+      if(err) { console.log(err); callback({result:"fail"}); return; }
+      callback({result:"success"});
+    });
+  });
+};
+service.getCustomerById = function(id,callback){
+  var record = {};
+  var sql = "SELECT * FROM customer where id='"+id+"'";
+  console.log("sql:"+sql);
+  pool.getConnection(function(err, connection) {
+    if(err) { console.log(err); callback({}); return; }
+    // make the query
+    connection.query(sql, function(err, results) {
+      connection.release();
+      if(err) { console.log(err); callback({}); return; }
+      if(results.length == 0){
+        callback(record);
+      }
+      callback(results[0]);
+    });
+  });
+
+};
+service.updateCustomer = function(customer,callback){
+         pool.getConnection(function(err, connection) {
+        if(err) { console.log(err); callback({result:"fail"}); return; }
+        connection.query("UPDATE customer set ? WHERE id = ? ",[customer,customer.id], function(err, results) {
+          if(err){
+           console.log("Error Selecting : %s ",err );
+           callback({result:"fail"});
+          }else{
+           callback({result:"success"});
+         }
+      });
+    });
+};
+
+
+======== 
+Step 2 (change in apiCustomer.js) (for add)
+========
+//POST | http://localhost:3000/api/customer | customer data | add customer
+router.post('/', function(req, res, next) {
+  let callback = function(result){
+    console.log(result);
+    res.send(result);
+  }
+  customerSqlService.addCustomer(req.body,callback);
+});
+
+======== 
+Step 3 (change in apiCustomer.js) (for edit)
+========
+
+======== 
+Step 4 (change in apiCustomer.js) (for delete)
+========

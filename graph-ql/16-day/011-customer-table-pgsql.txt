@@ -1,0 +1,16 @@
+under pgsql shell
+====
+\c nodejs;
+\l
+
+
+CREATE TABLE customer (
+  id SERIAL PRIMARY KEY,
+  name varchar(200) NOT NULL,
+  address text NOT NULL,
+  email varchar(200) NOT NULL,
+  phone varchar(20) NOT NULL,
+  createdAt TIMESTAMP,
+  updatedAt TIMESTAMP
+) ;
+

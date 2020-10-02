@@ -1,0 +1,19 @@
+// mathClient.js
+const math = require('./mathLib');
+
+console.log('sum is '+math.sum(2,5));
+console.log('mul is '+math.mul(2,5));
+
+// mathLib.js
+var math ={};
+
+math.sum = function(a,b){
+	return a+b;
+}
+
+math.mul = function(a,b){
+	return a*b;
+}
+
+module.exports = math;
+

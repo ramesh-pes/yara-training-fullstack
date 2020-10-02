@@ -1,0 +1,23 @@
+    <script type="text/javascript">
+      doLogin = () => {
+        let email = $('#email').val();
+        let password = $('#password').val();
+        if(email ==""){
+          alert('Email cannot be blank.');
+        } else{
+           $.ajax({url: "/users/login",
+            method:'POST', 
+            data:{email:email,password:password},
+            success: function(response){
+              if(response.result =="success"){
+                location = "/customer";
+              }else{
+                alert(response.msg);
+              }
+            }});
+        } 
+        /*else if(email == password) {
+          //location = "/customer";
+        }*/
+      }
+    </script>

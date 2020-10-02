@@ -1,0 +1,18 @@
+yarn add  pg pg-hstore 
+
+change on models/customer.js
+----
+const sequelize = new Sequelize('nodejs', 'postgres', 'smartant', {
+  host: 'localhost',
+  dialect: 'postgres'
+});
+
+/*
+const sequelize = new Sequelize(
+  'nodejs',
+  'root', 
+  'smartant', {
+  host: 'localhost',
+  dialect: 'mysql'
+});*/
+

@@ -1,0 +1,79 @@
+
+loose coupling
+data (model) <==> route  /api/customer
+
+========
+1. model/customer.js
+========
+var model ={};
+var customers = [
+	{id:1, name:'Vivek', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:2, name:'Rama', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:3, name:'Krishna', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:4, name:'Rahim', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'}
+];
+
+model.getRecords = function(){
+	return customers;
+}
+
+model.addRecord = function(record){
+	return customers.push(record);
+}
+
+model.deleteRecord = function(record){
+	let temp = [];
+	for (var i = 0; i < customers.length; i++) {
+		if(record.id != customers[i].id){
+			temp.push(customers[i]);
+		}
+	}
+	customers = temp;
+}
+
+model.updateRecord = function(record){
+	let customer = record;
+	for (var i = 0; i < customers.length; i++) {
+		if(customer.id == customers[i].id){
+			customers[i] = customer;
+		}
+	}
+}
+module.exports = model;
+
+============
+
+
+========
+routes/customer-api.js
+========
+var express = require('express');
+var router = express.Router();
+var customerModel = require('../model/customer');
+
+router.get('/', function (req, res) {
+	res.send(customerModel.getRecords());
+});
+
+router.put('/', function (req, res) {
+	let customer = req.body;
+	customerModel.updateRecord(customer);
+	res.send({result:'success', msg:'customer updated successfully.'});
+});
+
+router.delete('/', function (req, res) {
+	let customer = req.body;
+	customerModel.deleteRecord(customer);
+	res.send({result:'success', msg:'customer delete successfully.'});
+});
+
+router.post('/', function (req, res) {
+	customerModel.addRecord(req.body);
+	res.send({result:'success', msg:'customer added successfully.'});
+});
+
+module.exports = router;
+
+============
+
+

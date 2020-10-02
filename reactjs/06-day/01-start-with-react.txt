@@ -1,0 +1,8 @@
+cd workspace
+npx create-react-app customer-app-react
+sudo npm install -g yarn
+cd customer-app-react 
+yarn start
+
+open: http://localhost:3000/
+

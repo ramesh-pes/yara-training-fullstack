@@ -1,0 +1,11 @@
+
+Client GUI + RESTClient + GraphQL
+
+---
+GraphQL (/grapql) sec 2 => (Apollo server)
+https://www.apollographql.com/docs/apollo-server/data/subscriptions/
+
+Service API 
+---
+
+Database SQL server

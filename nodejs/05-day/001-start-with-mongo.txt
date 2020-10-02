@@ -1,0 +1,24 @@
+Open terminal
+------
+cd 
+mv mongodb-macos-x86_64-4.4.1.tgz ./
+unzip from gui
+
+/Users/vivek/mongodb
+/Users/vivek/mongodb/bin
+
+mkdir /Users/vivek/data
+mkdir /Users/vivek/data/db
+
+Start SERVER
+/Users/vivek/mongodb/bin/mongod -dbpath /Users/vivek/data/db &
+make sure data folder must exist
+/Users/vivek/data/db
+You may need to create this
+
+Start Client 
+/Users/vivek/mongodb/bin/mongo
+
+--------
+
+

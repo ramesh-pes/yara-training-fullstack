@@ -1,0 +1,11 @@
+
+select s from subjects s, teachers t ,teacher_has_subjects ts where 
+ts.subjectId=s.id and ts.teacherId=t.id and teacherId=1; 
+
+
+select s from subjects s, teachers t ,teacher_has_subjects ts where 
+ts."subjectId"=s.id and ts."teacherId"=t.id and t.id=1; 
+
+select s from subjects s, teachers t ,teacher_has_subjects ts where 
+ts."subjectId"=s.id and ts."teacherId"=t.id and t.id=5; 
+

@@ -1,0 +1,21 @@
+console.log("Vivek");
+
+var commands = {
+'pwd': function () {
+	console.log(process.cwd());
+	},
+'sum': function (args) {
+	let sum = Number(args[0]) + Number(args[1]);
+	console.log('sum is '+sum);
+	},
+'exit': function (args) {
+	process.exit();
+	}
+};
+
+process.stdin.on('data', function (input) {
+	var matches = input.toString().match(/(\w+)(.*)/);
+	var command = matches[1].toLowerCase();
+	var args = matches[2].trim().split(/\s+/);
+	commands[command](args);
+});

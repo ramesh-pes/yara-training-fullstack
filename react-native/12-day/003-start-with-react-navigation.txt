@@ -1,0 +1,65 @@
+
+Steps to create Navigation:
+
+1. Close your metro bundler
+2. Install these dependencies
+cd CustomerAppNative
+--
+yarn add @react-navigation/native
+yarn add @react-navigation/stack
+
+yarn add react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+-----
+3. Create folder CustomerAppNative/src
+and  CustomerAppNative/src/container
+and  CustomerAppNative/src/component
+
+4. cd ios
+--
+pod install
+--
+
+5. Update App.js
+------
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './src/container/Login';
+
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+function AboutScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>About Screen</Text>
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+export default App;
+
+-----
+
+6. Reference:
+ https://reactnavigation.org/docs/hello-react-navigation
+

@@ -1,0 +1,14 @@
+  let subjectId = 2;
+  //let teachers = await sequelize.query('SELECT t FROM teachers t, teacher_has_subjects ts where ts."teacherId"=t.id and ts."subjectId"=2', { type: QueryTypes.SELECT });
+  //res.send(teachers);
+
+
+  let teachers = await sequelize.query('SELECT t FROM teachers t, teacher_has_subjects ts where ts."teacherId"=t.id and ts."subjectId"=2', {   
+    model: Model,
+    mapToModel: true // pass true here if you have any mapped fields
+    });
+  res.send(teachers);
+  /*
+
+
+

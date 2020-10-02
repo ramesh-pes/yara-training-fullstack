@@ -1,0 +1,26 @@
+var express = require('express');
+var app = express();
+
+var customers = [
+	{id:1, name:'Vivek', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:2, name:'Rama', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:3, name:'Krishna', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:4, name:'Rahim', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'}
+];
+
+app.get('/', function (req, res) {
+	res.send('This is a Customer API');
+});
+
+app.get('/api/customer', function (req, res) {
+	res.send(customers);
+});
+
+app.post('/api/customer', function (req, res) {
+	res.send('Hello POST About Page!');
+});
+
+var server = app.listen(3000, function () {
+	console.log('Example app listening at http://localhost:3000');
+});
+

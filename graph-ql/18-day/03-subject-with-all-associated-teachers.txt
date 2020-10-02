@@ -1,0 +1,19 @@
+  Subject.findByPk(subjectId, {
+    include: [
+      {
+        model: Model,
+        as: "teachers",
+        //attributes: ["id", "title", "description"],
+        through: {
+          attributes: [],
+        }
+      },
+    ],
+  })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(">> Error while finding Tag: ", err);
+    });
+

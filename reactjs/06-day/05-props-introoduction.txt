@@ -1,0 +1,39 @@
+import React from 'react';
+
+var name = "hello ";
+var sample = <h3>Person 1234 {name}</h3>;
+export default function Person(props) {
+  return (
+    <div>
+    <h4>Name:{props.name}  Email:{props.email} </h4>
+    </div>
+  );
+}
+
+export function Rama() {
+    return (
+      <div>
+      <h4>Name: Rama</h4>
+      </div>
+    );
+  }
+  
+========
+
+import React from 'react';
+import './App.css';
+import Person,{Rama} from './components/Person';
+
+function App() {
+  return (
+    <div className="App">
+    <h4>Hello to React</h4>
+      <Rama/>
+      <Person name="Vivek"/>
+      <Person name="Nidhi"/>
+      <Person name="Akshit"/>
+    </div>
+  );
+}
+
+export default App;

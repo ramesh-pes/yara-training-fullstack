@@ -1,0 +1,33 @@
+import React, { Component,useState,useEffect } from 'react';
+import { TextInput, View,Text } from 'react-native';
+
+const TimerApp = () => {
+  const [value, onChangeText] = React.useState('Useless Placeholder');
+  const [init, setInit] = React.useState(false);
+  const [count, setCount] = useState(0);
+  //var interval;
+  var myCount = 0;
+
+  useEffect(()=>{
+      if(!init){
+        setInit(true);
+        interval = setInterval(() => { 
+          console.log("count is "+count);
+          myCount = myCount +1;
+          setCount(count)}, 
+          1000);
+      }
+  })
+  return (
+    <View>
+        <Text>{count}</Text>
+        <TextInput
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        />
+    </View>
+  );
+}
+
+export default TimerApp;

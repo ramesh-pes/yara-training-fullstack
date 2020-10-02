@@ -1,0 +1,52 @@
+var express = require('express');
+var app = express();
+
+app.use(express.json()); // body is type json the handle
+
+var customerEndPoint = '/api/customer';
+var customers = [
+	{id:1, name:'Vivek', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:2, name:'Rama', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:3, name:'Krishna', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'},
+	{id:4, name:'Rahim', email:'vivek@gmail.com', phone:'112233', address:'ahmedabad'}
+];
+
+app.get('/', function (req, res) {
+	res.send('This is a Customer API');
+});
+
+app.get(customerEndPoint, function (req, res) {
+	res.send(customers);
+});
+
+app.put(customerEndPoint, function (req, res) {
+	let customer = req.body;
+	for (var i = 0; i < customers.length; i++) {
+		if(customer.id == customers[i].id){
+			customers[i] = customer;
+		}
+	}
+	res.send({result:'success', msg:'customer updated successfully.'});
+});
+
+app.delete(customerEndPoint, function (req, res) {
+	let customer = req.body;
+	let temp = [];
+	for (var i = 0; i < customers.length; i++) {
+		if(customer.id != customers[i].id){
+			temp.push(customers[i]);
+		}
+	}
+	customers = temp;
+	res.send({result:'success', msg:'customer delete successfully.'});
+});
+
+app.post(customerEndPoint, function (req, res) {
+	console.log("customer:"+JSON.stringify(req.body));
+	customers.push(req.body);
+	res.send({result:'success', msg:'customer added successfully.'});
+});
+
+var server = app.listen(3000, function () {
+	console.log('Example app listening at http://localhost:3000');
+});

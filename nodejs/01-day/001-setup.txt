@@ -1,0 +1,16 @@
+1. Chrome
+https://www.google.com/chrome/
+
+2. NodeJS (12.x) 
+https://nodejs.org/en/
+https://nodejs.org/en/download/
+
+3. Sublime Text3
+https://download.sublimetext.com/Sublime%20Text%20Build%203211%20x64.zip
+https://www.sublimetext.com/3
+
+OR
+4. VS Code
+https://code.visualstudio.com/download 
+https://code.visualstudio.com/
+

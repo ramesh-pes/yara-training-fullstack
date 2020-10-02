@@ -1,0 +1,11 @@
+React Native
+-----
+#brew install node
+brew install watchman
+sudo gem install cocoapods
+
+npx react-native init CustomerAppNative 
+
+cd  CustomerAppNative
+react-native run-ios
+

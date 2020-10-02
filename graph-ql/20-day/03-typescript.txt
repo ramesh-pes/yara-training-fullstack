@@ -1,0 +1,14 @@
+npx react-native init MyApp --template react-native-template-typescript
+npx create-react-app my-app --template typescript
+
+person = new Person(); //JS
+person:Person = new Person(); //TS
+person:any = new Person(); //TS
+
+
+fruits(a:number,b:object); //TS
+
+fruits(props); //any information JS
+fruits({person}); // information is visible  JS
+
+TS (JS + type)

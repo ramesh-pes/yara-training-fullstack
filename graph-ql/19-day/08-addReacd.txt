@@ -1,0 +1,16 @@
+export var addRecord = async(record) => {
+    console.log(JSON.stringify(record))
+	var query = 'mutation{​​addCustomer(name:"'+
+	record.name+'",phone:"'+record.phone+
+	'",address:"'+record.address+
+	'",email:"'+record.email+
+	'",dob:"'+record.dob+'") {​​id}​​}​​';
+	
+	console.log("query:"+query);
+
+    let response = await fetch({
+        query: query,
+      })
+    //let result = await response.json();
+    return response.data;
+}

@@ -1,0 +1,20 @@
+Hint
+-------
+service.addCustomer =  function(customer) {
+   return new Promise((resolve, reject) => {
+        pool.getConnection(function(err, connection) {
+        if(err) { console.log(err); 
+          resolve({result:"fail", msg:'customer addition failed.'});
+           }
+          connection.query("INSERT INTO customer set ? ",customer, function(err, results) {
+          connection.release();
+          if(err){
+           console.log("Error Selecting : %s ",err );
+           resolve({result:"fail", msg:'customer addition failed.'});
+          }else{
+           resolve({result:"success", msg:'customer added ok.'})
+         }
+      });
+    });
+    });
+};

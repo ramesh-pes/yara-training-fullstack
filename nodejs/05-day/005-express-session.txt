@@ -1,0 +1,160 @@
+express-session
+
+1. install it
+$> npm install express-session
+
+2. app.js
+---
+initialise
+
+var session = require('express-session')
+
+.
+.
+.
+//after
+var app = express();
+.
+.
+.
+
+var sess = {
+  secret: 'keyboard cat',
+  cookie: {},
+  proxy: true,
+  resave: true,
+  saveUninitialized: true
+}
+app.use(session(sess));
+---
+
+3. routes/users.js
+-----
+
+router.post('/login', function(req, res, next) {
+	if(req.body.email!="" && req.body.email == req.body.password ){
+		req.session.user = req.body.email;
+		console.log("req.session.user:"+req.session.user);
+		res.send ({result:'success', msg:'login is successful.'});
+	}else{
+		res.send ({result:'fail', msg:'login failed.'});
+	}
+});
+
+
+4. index.js (routes)
+update /login route
+------
+router.get('/login', function(req, res, next) {
+  delete(req.session.user);
+  res.render('login', { title: 'Login' });
+});
+
+-----
+
+5. Split index.js into two route files
+a) index.js
+b) securePages.js
+
+index.js
+-----
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.redirect('/login');
+});
+
+router.get('/abc.txt', function(req, res, next) {
+  res.send("This is abc.txt from router...")
+});
+
+
+router.get('/login', function(req, res, next) {
+  delete(req.session.user);
+  res.render('login', { title: 'Login' });
+});
+
+module.exports = router;
+-----
+
+securePages.js
+------
+var express = require('express');
+var customerService = require('../service/customer-service');
+var customerDbService = require('../service/customerdb-service');
+var customerMongoService = require('../service/customer-mongo-service');
+var router = express.Router();
+
+router.get('/customer/edit/:id', function(req, res, next) {
+  var callback = function(data){
+    res.render('customer-edit', { title: 'Update Customer' , customer:data});
+  }
+  customerMongoService.getCustomerById(req.params.id,callback)
+});
+
+router.get('/customer/:field/:searchWord', function(req, res, next) {
+  var callback = function(data){
+    res.render('customer', { title: 'Customer', data:data});
+  }
+  data:customerMongoService.getCustomersBySearch( req.params.field,req.params.searchWord,callback);
+});
+
+
+
+router.get('/customer/add', function(req, res, next) {
+  res.render('customer-add', { title: 'Add Customer' });
+});
+
+
+router.get('/dashboard', function(req, res, next) {
+  res.render('index', { title: 'Dashboard' });
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('index', { title: 'About' });
+});
+
+router.get('/customer', function(req, res, next) {
+  var callback = function(data){
+    res.render('customer', { title: 'Customer', data:data});
+  }
+  customerMongoService.getCustomers(callback);
+});
+
+router.get('/customer/:search', function(req, res, next) {
+  res.redirect("/customer");
+});
+
+module.exports = router;
+
+--------
+
+
+------
+5. In app.js
+// remove index router
+.
+.
+.
+var securePagesRouter = require('./routes/securePages');
+.
+.
+//after 
+app.use('/', openPagesRouter);
+app.use('/users', usersRouter);
+
+app.use(function(req, res, next) {
+  console.log("This is my check point for user / autorization");
+  if(typeof(req.session.user) == 'string'){
+    next(); 
+  }else{
+    res.send({result:"fail", msg:"you are not authorized for this request."})
+  }
+});
+
+app.use('/', securePagesRouter);
+app.use('/api', apiRouter);
+
+

@@ -1,0 +1,35 @@
+
+Implement Mysql witn CustomerApp (GET)
+------
+1. change / addition in model/customer-mysql.js
+-----
+service.getCustomers = async function(){
+  var customers = [];
+  var sql = "SELECT * FROM customer";
+  await new Promise((resolve, reject) => {
+    pool.getConnection(function(err, connection) {
+      if(err) { console.log(err); resolve(); return customers;}
+      // make the query
+      connection.query(sql, function(err, results) {
+        connection.release();
+        if(err) { console.log(err); resolve();}
+        customers = results;
+        resolve();
+      });
+    });
+  });
+ return customers;//argument to Promise
+}
+
+-------
+
+
+2. Hint in route/customer-api.js
+-------
+router.get('/', function (req, res) {
+	let callback = (records) =>{
+		console.log("records"+records);
+		res.send(records);
+	}
+	customerMySQL.getCustomers().then(callback);
+});

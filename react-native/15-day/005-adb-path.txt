@@ -1,0 +1,9 @@
+/Users/vivek/Library/Android/sdk/platform-tools
+
+set
+path=( /Users/vivek/.yarn/bin /Users/vivek/.config/yarn/global/node_modules/.bin /Users/vivek/Library/Android/sdk/platform-tools /Users/vivek/Library/Android/sdk/tools /usr/local/bin /usr/bin /bin /usr/sbin /sbin /Users/vivek/opt/apache-ant-1.9.14/bin /Users/vivek/pear/bin /Library/Apple/usr/bin /Users/vivek/opt/apache-maven-3.6.3/bin )
+
+sudo vim /etc/paths
+
+
+$>adb

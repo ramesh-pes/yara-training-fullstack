@@ -1,0 +1,25 @@
+https://www.postgresql.org/docs/10/tutorial-createdb.html
+
+psql mydb
+========
+
+SELECT version();
+
+CREATE TABLE weather (
+    city            varchar(80),
+    temp_lo         int,           -- low temperature
+    temp_hi         int,           -- high temperature
+    prcp            real,          -- precipitation
+    date            date
+);
+
+CREATE TABLE cities (
+    name            varchar(80),
+    location        point
+);
+
+
+INSERT INTO weather VALUES ('San Francisco', 46, 50, 0.25, '1994-11-27');
+
+SELECT * FROM weather;
+

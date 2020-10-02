@@ -1,0 +1,73 @@
+
+Hint:
+1. components/Todo.js
+---
+const Todo = ({ onClick, completed, text, onDelete }) => (
+  <div>
+  <span 
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  </span> &nbsp;&nbsp;<button 
+    onClick={onDelete} 
+  > delete</button>
+  </div>
+)
+-----
+
+2. TodoList.js
+-----
+import React from 'react'
+import PropTypes from 'prop-types'
+import Todo from './Todo'
+
+const TodoList = ({ todos, toggleTodo ,deleteTodo}) => (
+  <ul>
+    {todos.map(todo =>
+      <Todo
+        key={todo.id}
+        {...todo}
+        onClick={() => toggleTodo(todo.id)}
+        onDelete={() => deleteTodo(todo.id)}
+      />
+    )}
+  </ul>
+)
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    completed: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  toggleTodo: PropTypes.func.isRequired
+}
+
+export default TodoList
+------
+
+3. VisibileTodoList.js
+------
+const mapDispatchToProps = dispatch => ({
+  toggleTodo: id => dispatch(toggleTodo(id)),
+  deleteTodo: id => dispatch(deleteTodo(id))
+})
+-----
+
+4. actions/index.js
+-----
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+  id
+})
+-----
+
+5. Change in Reducer reducers/index.js
+-----
+      case 'DELETE_TODO':
+       console.log('>> delete todo.'+ action.id); 
+       return state.filter(item => item.id !== action.id);
+------       

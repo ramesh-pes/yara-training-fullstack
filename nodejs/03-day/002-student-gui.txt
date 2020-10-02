@@ -1,0 +1,11 @@
+making code with resource:
+Customer : 
+------------
+id, name, email, phone, address
+------------
+
+Asignment:
+Student :
+-------------------------
+id, name, parent, class, subject, teacher, city, country
+-------------------------

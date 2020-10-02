@@ -1,0 +1,66 @@
+http://training.pyther.com/yara/01-day/
+
+browser =: memory
+JS can not access memory
+--------
+d=9; // 
+-----------------
+name/id | value | type
+-----------------
+a | 90 | number
+sum | ƒ (a,b){return a+b;} | function
+--------
+
+---
+Real World 
+Earth 
+bird (Earth)
+Modi 
+ (Earth)
+
+ Window is mother object 
+
+
+ =========
+ 1995 Netscape Navigator
+ -------
+ New Paper ()
+ h1,h5 tags
+ -----
+ User can Input
+ Bank 
+
+	<form>
+		<input type="" name="" value="India" >
+		<input type="" name="" >
+		<input type="button" name="" onclick="console.log('B1')" value="B1">
+		<input type="button" name="" onclick="console.log('B2')" value="B2">
+	</form>
+
+==========
+JavaScript:
+ONLY Types
+number
+function
+string
+boolen
+undefined
+object
+
+Real World
+==========
+Human Being (actor)
+
+Java
+----
+Class (actor)
+
+
+HTML (document)
+----
+document (DOM GUI)
+
+JavaScript 
+----
+function 
+

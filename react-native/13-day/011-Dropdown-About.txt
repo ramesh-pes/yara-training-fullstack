@@ -1,0 +1,55 @@
+About component with DropDown
+--
+cd CustomerAppNative
+yarn add react-native-vector-icons
+yarn add react-native-dropdown-picker
+
+cd ios 
+pod install
+
+cd CustomerAppNative
+
+Update / create container/Aboutus.js
+----
+import React, { useState } from "react";
+import { View,Text,TextInput, ScrollView,StyleSheet,TouchableHighlight } from 'react-native';
+import Menu from '../components/AppMenu';
+import DropDownPicker from 'react-native-dropdown-picker';
+
+export default function AboutScreen(props) {
+    var countries = [];
+    return (
+      <View style={{ flex: 1, alignItems: 'center'}}>
+          <View>
+          <Menu  navigation={props.navigation}/>
+          <DropDownPicker
+            items={[
+                {label: 'UK', value: 'uk'},
+                {label: 'France', value: 'france'},
+            ]}
+        
+            multiple={true}
+            multipleText="%d items have been selected."
+            min={0}
+            max={10}
+        
+            defaultValue={countries}
+            containerStyle={{height: 40}}
+            itemStyle={{
+                justifyContent: 'flex-start'
+            }}
+            onChangeItem={item => {
+                
+            }}
+        />
+        <Text>About Screen</Text>
+
+          </View>
+        
+      </View>
+    );
+  }
+------
+
+cd CustomerAppNative
+react-native run-ios

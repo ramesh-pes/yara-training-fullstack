@@ -1,0 +1,25 @@
+exports.addSubject = (req, res) => {
+  let teacherId = 1;
+  let subjectId = 2;
+
+  return Model.findByPk(teacherId)
+    .then((teacher) => {
+      if (!teacher) {
+        console.log("Teacher not found!");
+        res.send(null);
+      }
+      return Subject.findByPk(subjectId).then((subject) => {
+        if (!subject) {
+          console.log("Subject not found!");
+          res.send(null);
+        }
+
+        teacher.addStudent(subject);
+        console.log(`>> added subject id=${subject.id} to Teacher id=${teacher.id}`);
+        res.send(teacher);
+      });
+    })
+    .catch((err) => {
+      console.log(">> Error while adding Tutorial to Tag: ", err);
+    });
+};

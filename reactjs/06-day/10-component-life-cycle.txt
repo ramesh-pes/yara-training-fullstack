@@ -1,0 +1,6 @@
+component created
+
+componentDidMount | created
+component update / change
+component removed from parent
+component removed from memeory

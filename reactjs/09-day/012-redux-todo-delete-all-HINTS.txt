@@ -1,0 +1,46 @@
+
+Step: 1
+Make a chnage in GUI AddTodo.js
+---
+similar to 
+dispatch(addTodo(input.value)) 
+//create functionality
+dispatch(deleteAllTodo())
+
+
+Step: 2
+Make a change in GUI actions/index.js
+---
+similar to 
+----
+export const addTodo = text => ({
+  type: 'ADD_TODO',
+  id: nextTodoId++,
+  text
+})
+-----
+
+export const deleteAllTodo = () => ({
+  type: 'DELETE_ALL'
+})
+-----
+
+
+Step: 3: reducers/todos.js
+-----------
+similar to below:
+-------
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
+-------
+
+    case 'DELETE_ALL':
+      return [
+      ]

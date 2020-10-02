@@ -1,0 +1,15 @@
+download http://13.126.54.164/nodejs/day-three/node-token-authentication.zip
+
+$> unzip node-token-authentication.zip
+$> cd node-token-authentication
+$> npm install
+$> node main.js
+
+http://localhost:3000/api/users
+http://localhost:3000/api
+
+generate tokem:
+postman
+
+http://localhost:3000/api/authenticate
+{"username":"admin", "password":"admin"}

@@ -1,0 +1,16 @@
+https://www.levvel.io/resource-library/a-guide-to-subscriptions-in-graphql-with-apollo
+
+mysql database nodejs
+-----
+CREATE TABLE messages (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	text VARCHAR(120) NOT NULL,
+	isFavorite BOOLEAN,
+	createdAt datetime,
+	updatedAt datetime
+)
+-----
+
+project locations:
+server: https://github.com/itReverie/itr-apollo-server
+client: https://github.com/itReverie/itr-apollo-client

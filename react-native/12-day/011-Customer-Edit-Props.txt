@@ -1,0 +1,3 @@
+    componentDidMount(){
+      console.log("id" + this.props.navigation.state.params.id);
+    }

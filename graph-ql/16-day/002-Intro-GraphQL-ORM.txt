@@ -1,0 +1,34 @@
+------
+1. nodejs (customer <=> mysql / mongodb)
+
+Archetecture
+---
+
+Browser (Client)
+--------------------
+Interface A | RESTAPI | GraphQL 
+Object REST 
+https://graphql.org/
+--------------------
+
+Application Server (NodeJS)
+Customer Data Object Oriented P (Object)
+
+SQL as Query Language Object
+===================
+Interface B | SQL  (Structured Query Language)
+ORM => Object Relationship mapper
+ //https://sequelize.org/
+===================
+Database
+
+
+1. Service (RESTAPI)  | 
+a) QL ?  
+
+2. SQL service?
+Object request just like REST / function 
+  1. create
+  2. update
+  3. get 
+  4. list 

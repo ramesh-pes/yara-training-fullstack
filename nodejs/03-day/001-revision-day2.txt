@@ -1,0 +1,19 @@
+revision day 2:
+--------------
+1. Syed: Express framework= frame / structure and plan our project
+2. Akshith : nodemon detect change and re run
+3. Pranjal: ES6 => Ecma Script 
+4. Apeksha: Async lib . multiple events
+5. Ashwin: http server (res,req)
+6. Abhilash: socket.io (chat.js)
+7. Ramesh Kumar: Async problem
+8. Shashank: express generation (simple project)
+9. Sidharth: Static / dynamic html
+10. Nidhi: Closure function concept
+11: Uddip : REST API | GET | POST | PUT | DEL |    /api/customer
+12. Soumya: Next function .. array of function []
+13. Suraksha: Node perforamce because (Why node is Node ) Single threaded
+14. Simran: Chat  .. client <==> Server <==> communication (concrrunt connections)
+15. Ramesh: comamnd / wger
+16. routes app.get / app.put , app.all 
+

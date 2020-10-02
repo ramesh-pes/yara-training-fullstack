@@ -1,0 +1,72 @@
+
+Step: 1
+Make a chnage in GUI AddTodo.js
+---
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo,deleteAllTodo } from '../actions'
+
+const AddTodo = ({ dispatch }) => {
+  let input
+
+  return (
+    <div>
+        <input ref={node => input = node} />
+        <button onClick={()=>{
+          if (!input.value.trim()) {
+            return
+          }
+          dispatch(addTodo(input.value))
+          input.value = ''
+      }}>
+          Add Todo
+        </button>
+        <button  onClick={()=>{
+          dispatch(deleteAllTodo());
+      }}>
+         Delete All
+        </button>
+    </div>
+  )
+}
+
+export default connect()(AddTodo)//HOC
+
+
+Step: 2
+Make a change in GUI actions/index.js
+---
+similar to 
+----
+export const addTodo = text => ({
+  type: 'ADD_TODO',
+  id: nextTodoId++,
+  text
+})
+-----
+
+export const deleteAllTodo = () => ({
+  type: 'DELETE_ALL'
+})
+-----
+
+
+Step: 3: reducers/todos.js
+-----------
+similar to below:
+-------
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
+-------
+
+    case 'DELETE_ALL':
+      return [
+      ]
+

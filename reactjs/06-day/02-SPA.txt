@@ -1,0 +1,10 @@
+SPA => Single Page Application | gmail.com 
+Client side re rendering of page based on URL or data
+-------
+1. angularJS
+2. Angular
+3. React
+4. VueJS
+5. many more
+6. JavaScript / jQuery
+-------

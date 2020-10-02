@@ -1,0 +1,39 @@
+
+GUI + REACTJS + Sequelize + Postgres
+------
+School Management
+----
+1. System should have multiple students.
+2. System should have multiple teachers.
+3. System should have multiple subjects.
+4. Class / Period / Session 
+schedule a session with  Subject + teacher (it should take all students associted with that subject) and schedule that class
+
+a) one students can enroll to zore or many subjects
+b) one teacher can teach zero or many subjects
+c) ONLY teacher can login  => teacher table
+
+GUI design
+-----
+1. Page Login (ONLY teacher can login)
+2. Type of teacher  normal / admin
+3. teacher of admin previlage can add another teacher
+4. Admin Teacher can see list of other teacher / CRUD on teacher
+5. Admin teacher can see all student  / add students.
+6. Admin teacher can see enroll any student to any subject.
+7. ONLY Admin teacher can add / crud subjects
+
+8. A teacher can see her subject  
+9. A teacher can add (enroll) students to her/his subject  
+10. A teacher can schedule his/her class with subject at speficific day / time
+
+https://dbdiagram.io/home
+
+Steps for implementations as follows:
+1. Create a schema as https://dbdiagram.io/
+2. create the database in PG schooldb
+3. create all tables in db as per per your design
+4. thought through and add few dummy entries to chek and validate your schema as per business rules provided
+
+5. Integration with node-app (on REST API) / POST MAN with sequelize 
+

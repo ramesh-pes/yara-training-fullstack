@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		sum = function(){
+
+		}
+	</script>
+	<h4>Hello to training!!!!</h4>
+	<form>
+		<input type="" name="" value="India" >
+		<input type="" name="" >
+		<input type="button" name="" onclick="console.log('B1')" value="B1">
+		<input type="button" name="" onclick="console.log('B2')" value="B2">
+	</form>
+	<form>
+		<input type="" name="" value="India" >
+		<input type="" name="" value="Delhi" >
+		<input type="" name="" >
+		<input type="button" name="" onclick="console.log('B1')" value="B1">
+		<input type="button" name="" onclick="console.log('B2')" value="B2">
+	</form>
+</body>
+</html>

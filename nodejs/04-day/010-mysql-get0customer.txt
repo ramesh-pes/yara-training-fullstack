@@ -1,0 +1,45 @@
+
+Implement Mysql witn CustomerApp (GET)
+------
+1. model/customer-mysql.js
+-----
+var mysql = require('mysql');
+
+var pool  = mysql.createPool({
+  connectionLimit : 10,
+  host            : 'localhost',
+  user            : 'root',
+  password        : 'smartant',
+  database        : 'nodejs'
+});
+ 
+var service = {};
+
+service.getRecords = function(callback){
+  var sql = "SELECT * FROM customer";
+  console.log("sql:"+sql);
+  pool.getConnection(function(err, connection) {
+    if(err) { console.log(err); callback([]); return; }
+    // make the query
+    connection.query(sql, function(err, results) {
+      connection.release();
+      if(err) { console.log(err); callback([]); return; }
+      callback(results);
+    });
+  });
+};
+
+module.exports = service;
+-------
+
+
+2. Hint in route/customer-api.js
+-------
+router.get('/', function (req, res) {
+	let callback = (records) =>{
+		res.send(records);
+	}
+	//res.send(customerModel.getRecords());
+	// setTimeout // async
+	customerMySQL.getRecords(callback);
+});

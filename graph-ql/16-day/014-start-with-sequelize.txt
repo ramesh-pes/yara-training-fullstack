@@ -1,0 +1,14 @@
+sequelize-cli 
+
+npm install -g sequelize-cli 
+
+cd customerAppNode
+
+$sequelize init 
+
+sequelize model:create --name Employee --attributes id:number,name:string,email:string,address:string,phone:string
+
+sequelize db:migrate 
+
+
+===========

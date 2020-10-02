@@ -1,0 +1,61 @@
+Step 1 (sample-app)
+-----
+create file views/sample.html
+--
+<html>
+<head>
+<title>My Node.js server</title>
+</head>
+<body>
+<h1>Hello {name}!</h1>
+<ul>
+<li>Node Version: {node}</li>
+<li>V8 Version: {v8}</li>
+<li>URL: {url}</li>
+<li>Time: {time}</li>
+</ul>
+</body>
+</html>
+
+
+Step 2 (update main.js)
+-----
+var fs = require('fs');
+var http = require('http');
+
+var templateEngine = function (template, data) {
+
+	var vars = template.match(/\{\w+\}/g);
+	if (!vars) {
+	return template;
+	}
+	var nonVars = template.split(/\{\w+\}/g);
+	var output = '';
+	for (var i = 0; i < nonVars.length; i++) {
+	output += nonVars[i];
+	if (i < vars.length) {
+	var key = vars[i].replace(/[\{\}]/g, '');
+	output += data[key]
+	}
+	}
+	return output;
+};
+
+var server = http.createServer(function (req, res) {
+res.statusCode = 200;
+	res.setHeader("Content-Type", "text/html");
+	fs.readFile('views/sample.html', function (err, data) {
+		if (!err) {
+			res.write(templateEngine(data.toString(), {name:'NodeX',node:'12.5'})); // use our template engine here
+			res.end();
+		}
+	});
+});
+server.listen(3000);
+
+-----
+Step 3 (update main.js)
+-----
+
+http://localhost:3000/
+

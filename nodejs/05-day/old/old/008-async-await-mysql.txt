@@ -1,0 +1,17 @@
+// modify customer-mysql
+service.getCustomers = async function(){
+  var customers = [];
+  await new Promise((resolve, reject) => {
+  	pool.query('SELECT * from customer', function (error, results, fields) {
+  	if (error) {
+  		customers = [];
+  		resolve();
+  		throw error;
+  	}else{
+  		customers = results;
+  		resolve();
+  	}
+	});
+  });
+ return customers;
+}

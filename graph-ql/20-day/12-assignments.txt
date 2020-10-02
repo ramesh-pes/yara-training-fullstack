@@ -1,0 +1,21 @@
+Assignment 1
+-----
+Make an applicaiton call School App
+ReactJS + PGSQL + Node-Express
+--
+teacher login
+teacher admin
+--
+teacher <=> subject <=> student 
+sessions /class
+CRUD on teacher,subject ,student
+add subject to teacher
+add students to subject
+
+
+Assignment 2 (GraphQL)
+---
+implement customet CRUD to 
+http://training.pyther.com/yara/20-day/11-subscription-latest-version-apollo.txt
+Current Apollo-server example
+----

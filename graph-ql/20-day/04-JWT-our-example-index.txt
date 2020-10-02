@@ -1,0 +1,49 @@
+const express = require('express')
+const bodyParser = require('body-parser')
+const Routes = require('./routes')
+const cors = require('cors');
+// express -e sampleNode
+class App {
+    //cors 
+    constructor() {
+        this.expressApp = express()
+        this.expressApp.use(cors({
+          origin: 'http://localhost:3000',
+          optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+        }));
+        
+        this.configs = {
+            get port() {
+                return process.env.PORT || 4000
+            }
+        }
+    }
+
+    applyJWT() {
+        this.expressApp.use(bodyParser.json())
+        this.expressApp.use((req,res,next)=>{
+            console.log(">> applyJWT");
+            console.log(req.headers['authorization']);
+            next();
+        })
+    }
+    applyMiddleware() {
+        //Allows the server to parse json
+        //Registers the routes used by the app
+        new Routes(this.expressApp)
+    }
+
+    run() {
+        this.expressApp.listen(this.configs.port, () => {
+            console.log("Express server running project on port " + this.configs.port + ".")
+            console.log(`Environment: ${process.env.STAGE || "development"}`)
+        })
+    }
+}
+
+//Runs the thing
+const app = new App()
+app.applyJWT()
+app.applyMiddleware()
+app.run()
+

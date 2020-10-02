@@ -1,0 +1,26 @@
+console.log(fields);
+let baseQuery = `SELECT * FROM ?? WHERE `
+
+let params = [this.TABLE_NAME]
+
+Object.keys(fields).forEach((key, index) => {
+baseQuery += `${key} LIKE ?`
+params.push('%'+fields[key]+'%')
+if (index + 1 !== Object.keys(fields).length) baseQuery += " AND "
+})
+
+if (order != null && order.by != null && order.direction != null) {
+baseQuery += ` ORDER BY ??`
+baseQuery += order.direction === sqlConstants.DESC ? " DESC" : " ASC"
+params.push(order.by)
+}
+
+if (limit != null && !isNaN(limit)) {
+baseQuery += " LIMIT ?"
+params.push(limit)
+}
+return mysql.createQuery({
+query: baseQuery,
+params
+})
+}
